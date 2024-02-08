@@ -1,0 +1,56 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.filtrar {
+
+    &__block {
+        display: block;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background-color: v.$blanco;
+        @include m.shadow();
+        border-radius: 1rem;
+    }
+
+    &__h3 {
+        font-size: 1.8rem;
+        margin: 0;
+        padding: 1rem;
+        text-align: center
+    }
+
+    &__grid {
+        display: block;
+        padding: 1rem;
+        place-items: center;
+        border-radius: 1rem;
+
+        .filtrar__boton {
+            margin-bottom: 1rem;
+        }
+        
+        @include m.telefono {
+            @include m.grid(2,2rem);
+            .filtrar__boton {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__label {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    &__input {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &__boton {
+        font-size: 1.2rem;
+        margin-top: 0;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+}

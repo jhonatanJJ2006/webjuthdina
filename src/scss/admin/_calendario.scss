@@ -1,0 +1,118 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.calendario {
+
+    &__h2 {
+        text-align: center;
+    }
+
+    &__head {
+        background-color: v.$gris-oscuro;
+        color: v.$blanco;
+        margin-bottom: 1rem;
+        padding: 1rem
+    }
+
+    &__head {
+        @include m.grid(7, 1rem);
+        place-items: center;
+        margin: 0;
+    }
+
+    &__dia-actual {
+        border-radius: 1rem;
+        background-color: darken(v.$gris-claro, 10%);
+    }
+
+    &__body {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        place-items: center;
+        margin-top: 1rem;
+        
+        &--dia {
+            width: 100%;
+            height: 20rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include m.telefono {
+                height: 15rem;
+            }
+        }
+        
+        &--dia-lunes {
+            grid-column: 1;
+        }
+        
+        &--dia-martes {
+            grid-column: 2;
+        }
+        
+        &--dia-miercoles {
+            grid-column: 3;
+        }
+        
+        &--dia-jueves {
+            grid-column: 4;
+        }
+        
+        &--dia-viernes {
+            grid-column: 5;
+        }
+        
+        &--dia-sabado {
+            grid-column: 6;
+        }
+
+        &--dia-domingo {
+            grid-column: 7;
+        }
+    }
+
+    &__dia {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__enlace {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        margin-top: 1rem;
+        width: 100%;
+        height: auto;
+    }
+
+    &__pedido {
+        width: 2rem;
+        height: 2rem;
+        background-color: v.$azul;
+        color: v.$blanco;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+
+        @include m.telefono {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            background-color: v.$blanco;
+            color: v.$azul;
+            border: 1px solid v.$azul;
+        }
+    }
+}

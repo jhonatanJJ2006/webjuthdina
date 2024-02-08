@@ -1,0 +1,50 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.usuario {
+    padding: 1rem;
+
+    &__admin-plus {
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: v.$verde;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+        &--color {
+            color: v.$blanco;
+            border: none;
+            background-color: transparent;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__admin-x {
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: v.$rojo;;
+
+        &--color {
+            color: v.$blanco;
+            border: none;
+            background-color: transparent;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__suscripcion-x {
+        font-size: 3rem;
+        color: v.$rojo;
+    }
+
+    &__suscripcion-plus {
+        font-size: 3rem;
+        color: v.$verde;
+    }
+}
